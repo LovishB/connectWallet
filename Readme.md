@@ -1,1 +1,1 @@
-This is project by LovishB.
+This is project by LovishB. (Blockchain Dev)
