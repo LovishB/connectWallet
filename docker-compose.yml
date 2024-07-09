@@ -1,0 +1,19 @@
+services:
+  api_gateway:
+    build: ./connect-wallet
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./connect-walllet/src:/usr/src/app/src
+    command: npm run start:prod
+    environment:
+      - PORT=3000
+  contract_microservice:
+    build: ./contract-microservice
+    volumes:
+      - ./contract-microservice/src:/usr/src/app/src
+    command: npm run start:dev
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
